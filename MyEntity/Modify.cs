@@ -108,8 +108,12 @@ namespace MyEntity
         private void RemoveUserButton_Click(object sender, EventArgs e)
         {
 
-            Methods.RemoveUser(DeleteUserComboBox.SelectedItem.ToString());
-            RefreshUsers(DeleteUserComboBox);
+            if (DeleteUserComboBox.SelectedItem!=null)
+            {
+                Methods.RemoveUser(DeleteUserComboBox.SelectedItem.ToString());
+                RefreshUsers(DeleteUserComboBox);
+            }
+            
         }
 
         private void tabControl1_Click(object sender, EventArgs e)
@@ -188,8 +192,12 @@ namespace MyEntity
 
         private void DeleteAccButton_Click_1(object sender, EventArgs e)
         {
-            Methods.RemoveAccount(Convert.ToInt32(DeleteAccComboBox.SelectedItem.ToString()));
-            RefreshAccounts(DeleteAccComboBox, comboBox1);
+            if (DeleteAccComboBox.SelectedItem!=null)
+            {
+                Methods.RemoveAccount(Convert.ToInt32(DeleteAccComboBox.SelectedItem.ToString()));
+                RefreshAccounts(DeleteAccComboBox, comboBox1);
+            }
+           
         }
 
         private void button3_Click_1(object sender, EventArgs e)

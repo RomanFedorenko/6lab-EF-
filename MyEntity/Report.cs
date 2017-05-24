@@ -41,12 +41,14 @@ namespace MyEntity
 
                                 dataGridView1.Rows[rowindex].Cells[0].Value = operation.Summ;
                                 dataGridView1.Rows[rowindex].Cells[1].Value = operation.date;
+                                dataGridView1.Rows[rowindex].Cells[2].Value = item.Name;
                                 total += operation.Summ;
                             }
                             else
                             {
                                 dataGridView1.Rows[rowindex].Cells[0].Value = -operation.Summ;
                                 dataGridView1.Rows[rowindex].Cells[1].Value = operation.date;
+                                dataGridView1.Rows[rowindex].Cells[2].Value = item.Name;
                                 total -= operation.Summ;
                             }
                             rowindex++;
@@ -59,6 +61,7 @@ namespace MyEntity
                                 dataGridView1.Rows.Add();
                                 dataGridView1.Rows[rowindex].Cells[0].Value = operation.Summ;
                                 dataGridView1.Rows[rowindex].Cells[1].Value = operation.date;
+                                dataGridView1.Rows[rowindex].Cells[2].Value = item.Name;
                                 rowindex++;
                                 total += operation.Summ;
                             }
@@ -70,6 +73,7 @@ namespace MyEntity
                                 dataGridView1.Rows.Add();
                                 dataGridView1.Rows[rowindex].Cells[0].Value = -operation.Summ;
                                 dataGridView1.Rows[rowindex].Cells[1].Value = operation.date;
+                                dataGridView1.Rows[rowindex].Cells[2].Value = item.Name;
                                 rowindex++;
                                 total -= operation.Summ;
                             }
@@ -106,12 +110,14 @@ namespace MyEntity
 
                             dataGridView1.Rows[rowindex].Cells[0].Value = operation.Summ;
                             dataGridView1.Rows[rowindex].Cells[1].Value = operation.date;
+                            dataGridView1.Rows[rowindex].Cells[2].Value = contribution.Name;
                             total += operation.Summ;
                         }
                         else
                         {
                             dataGridView1.Rows[rowindex].Cells[0].Value = -operation.Summ;
                             dataGridView1.Rows[rowindex].Cells[1].Value = operation.date;
+                            dataGridView1.Rows[rowindex].Cells[2].Value = contribution.Name;
                             total -= operation.Summ;
                         }
                         rowindex++;
@@ -124,6 +130,7 @@ namespace MyEntity
                             dataGridView1.Rows.Add();
                             dataGridView1.Rows[rowindex].Cells[0].Value = operation.Summ;
                             dataGridView1.Rows[rowindex].Cells[1].Value = operation.date;
+                            dataGridView1.Rows[rowindex].Cells[2].Value = contribution.Name;
                             rowindex++;
                             total += operation.Summ;
                         }

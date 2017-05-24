@@ -94,6 +94,8 @@
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CodeFirst.Account.datasource" />
+    <None Include="Properties\DataSources\CodeFirst.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

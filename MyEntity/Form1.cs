@@ -77,7 +77,7 @@ namespace MyEntity
                     return;
                 using (UserContext db = new UserContext())
                 {
-                    User user = db.Users.Find(id);
+                    User user =  db.Users.Find(id);
                     List<Account> accounts = user.Accounts.ToList();
                     dataGridView2.DataSource = accounts;
                 }
@@ -99,18 +99,17 @@ namespace MyEntity
                 return;
             }
            
-            int id = 0;
-            bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out id);
+            int accnumber = 0;
+            bool converted = Int32.TryParse(dataGridView2[0, index].Value.ToString(), out accnumber);
             if (converted == false)
                 return;
             
-            using (UserContext db = new UserContext())
-            {
+            
                 
-                Account account = db.Accounts.Find(id);
+                Account account = Methods.FindAccOwner(accnumber);
                 Report report = new Report(account);
                 report.Show();
-            }
+            
 
            
         }
@@ -123,6 +122,11 @@ namespace MyEntity
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
          
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 
