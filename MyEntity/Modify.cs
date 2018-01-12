@@ -72,15 +72,19 @@ namespace MyEntity
         {
             combobox.Items.Clear();
             combobox.Text = "";
-            List<Account> lst = Methods.GetUserAccounts(depending.SelectedItem.ToString());
-            foreach (Account account in lst)
+            if (depending.SelectedItem!=null)
             {
-                combobox.Items.Add(account.AccNumber);
+                List<Account> lst = Methods.GetUserAccounts(depending.SelectedItem.ToString());
+                foreach (Account account in lst)
+                {
+                    combobox.Items.Add(account.AccNumber);
+                }
+                if (lst.Count != 0)
+                {
+                    combobox.SelectedIndex = 0;
+                }
             }
-            if (lst.Count != 0)
-            {
-                combobox.SelectedIndex = 0;
-            }
+            
 
         }
 

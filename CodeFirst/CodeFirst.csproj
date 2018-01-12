@@ -31,12 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -49,9 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
-    <Compile Include="Contribution.cs" />
-    <Compile Include="Methods.cs" />
+    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\Contribution.cs" />
+    <Compile Include="Entities\Methods.cs" />
     <Compile Include="Migrations\201705211051499_AccountNumber.cs" />
     <Compile Include="Migrations\201705211051499_AccountNumber.Designer.cs">
       <DependentUpon>201705211051499_AccountNumber.cs</DependentUpon>
@@ -73,10 +71,10 @@
       <DependentUpon>201705241710552_Final.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Operation.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Entities\Operation.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserContext.cs" />
+    <Compile Include="Context\UserContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
