@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{67BF00CB-2F89-4A4A-BDFC-993B03E95BBA}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{93657F9A-B7E6-4592-9C18-65DAFE21CE27}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyEntity</RootNamespace>
-    <AssemblyName>MyEntity</AssemblyName>
+    <RootNamespace>CodeFirst</RootNamespace>
+    <AssemblyName>CodeFirst</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -46,72 +43,59 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modify.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\Contribution.cs" />
+    <Compile Include="Methods\Methods.cs" />
+    <Compile Include="Migrations\201705211051499_AccountNumber.cs" />
+    <Compile Include="Migrations\201705211051499_AccountNumber.Designer.cs">
+      <DependentUpon>201705211051499_AccountNumber.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modify.Designer.cs">
-      <DependentUpon>Modify.cs</DependentUpon>
+    <Compile Include="Migrations\201705211858245_DateToOperation.cs" />
+    <Compile Include="Migrations\201705211858245_DateToOperation.Designer.cs">
+      <DependentUpon>201705211858245_DateToOperation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Migrations\201705211957029_IntToDouble.cs" />
+    <Compile Include="Migrations\201705211957029_IntToDouble.Designer.cs">
+      <DependentUpon>201705211957029_IntToDouble.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Migrations\201705241559152_NumberAccUnique.cs" />
+    <Compile Include="Migrations\201705241559152_NumberAccUnique.Designer.cs">
+      <DependentUpon>201705241559152_NumberAccUnique.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Migrations\201705241710552_Final.cs" />
+    <Compile Include="Migrations\201705241710552_Final.Designer.cs">
+      <DependentUpon>201705241710552_Final.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Entities\Operation.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Report.Designer.cs">
-      <DependentUpon>Report.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Modify.resx">
-      <DependentUpon>Modify.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Report.resx">
-      <DependentUpon>Report.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="Properties\DataSources\CodeFirst.Account.datasource" />
-    <None Include="Properties\DataSources\CodeFirst.User.datasource" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <Compile Include="Context\UserContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CodeFirst\CodeFirst.csproj">
-      <Project>{93657f9a-b7e6-4592-9c18-65dafe21ce27}</Project>
-      <Name>CodeFirst</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Migrations\201705211051499_AccountNumber.resx">
+      <DependentUpon>201705211051499_AccountNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705211858245_DateToOperation.resx">
+      <DependentUpon>201705211858245_DateToOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705211957029_IntToDouble.resx">
+      <DependentUpon>201705211957029_IntToDouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705241559152_NumberAccUnique.resx">
+      <DependentUpon>201705241559152_NumberAccUnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705241710552_Final.resx">
+      <DependentUpon>201705241710552_Final.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

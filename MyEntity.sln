@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEntity", "MyEntity\MyEntity.csproj", "{67BF00CB-2F89-4A4A-BDFC-993B03E95BBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forms", "MyEntity\Forms.csproj", "{67BF00CB-2F89-4A4A-BDFC-993B03E95BBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirst", "CodeFirst\CodeFirst.csproj", "{93657F9A-B7E6-4592-9C18-65DAFE21CE27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF", "CodeFirst\EF.csproj", "{93657F9A-B7E6-4592-9C18-65DAFE21CE27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DDA3AA73-5334-4433-97D5-5FC36480649F}
 	EndGlobalSection
 EndGlobal
